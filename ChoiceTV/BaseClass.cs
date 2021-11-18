@@ -28,14 +28,14 @@ namespace ChoiceTV
             string[] arr = GetHttpResponse(rui).Split("\",\"");
             foreach (var item in arr)
             {
-                if (item.Contains("!DOCTYPE html PUBLIC"))
+                if (item.Contains("https://api.dev.watchchoice.tv"))
                 {
                     string[] arr2 = item.Split(' ');
                     foreach (var item2 in arr2)
                     {
-                        if (item2.Contains("href=\\\"https://mandrillapp.com/track/"))
+                        if (item2.Contains("watchchoice") && item2.Length > 100)
                         {
-                            return item2.Replace("href=", "").Replace(@"\", "").Replace("\"", "");
+                            return item2.Replace("\\n", "");
                         }
                     }
                 }

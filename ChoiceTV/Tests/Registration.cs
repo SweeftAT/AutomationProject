@@ -55,10 +55,9 @@ namespace ChoiceTV.Tests
 
 
 
-            //OpenUrlInNewTab(driver, activationUrl);
+            OpenUrlInNewTab(driver, activationUrl);
 
-
-            
+            WaitFewSeconds(driver, 1000);
 
         }
 
